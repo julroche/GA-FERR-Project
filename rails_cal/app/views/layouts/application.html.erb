@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CalTest2</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "event_calendar" %>
+  <%= javascript_include_tag "event_calendar" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+
+<!-- BEGIN #container -->
+    <div id="container">
+        
+    		<!-- BEGIN #header -->
+            <header>
+                <div id="logo">
+
+                </div>
+                <h1>CougarCal.com</h1>
+
+			</header>
+    		<div class="clear"></div>
+
+    			<%= yield %>
+
+	</div><!-- END #container -->
+
+     
+    <!-- BEGIN #footer -->
+    <footer> 
+            <div class="clear"></div>
+            
+            <div id="copyright">
+                 &copy; Copyright 2013 CougarCal.
+            </div>
+                            
+            <div id="companybottom">
+                Theme brought to you by <a href="#">SchoolCals!</a>
+            </div>
+               	
+    </footer>
+
+</body>
+</html>
