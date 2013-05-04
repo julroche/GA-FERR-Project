@@ -13,32 +13,50 @@
 
 
 <!-- BEGIN #container -->
-    <div id="container">
+  <div id="container">
         
-    		<!-- BEGIN #header -->
-            <header>
-                <div id="logo">
+    <!-- BEGIN #header -->
+      <header>
+        <div id="logo">
 
-                </div>
-                <h1>CougarCal.com</h1>
+        </div>
+        <h1>CougarCal.com</h1>
+   
 
-			</header>
-    		<div class="clear"></div>
-
-
-      <div id="user_nav">
+     <div id="user_nav">
         <% if current_user %>
           Logged in as <%= current_user.email %>.
           <%= link_to "Log out", log_out_path %>
+
+          <nav>
+          <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Create a Calendar</a></li>
+              <li><a href="options.html">Home</a></li>
+          </ul>
+        </nav>   
+
         <% else %>
-          <%= link_to "Sign up", sign_up_path %> or
-          <%= link_to "log in", log_in_path %>
+          <div class="authorization">
+            <ul>
+              <li><%= link_to "Sign Up", sign_up_path, class: "signupbutton1" %></li>
+              <li><%= link_to "Log In", log_in_path, class: "loginbutton1" %></li>
+            </ul>
+          </div>
+        <!--   <%= link_to "Sign up", sign_up_path %> or
+          <%= link_to "log in", log_in_path %> -->
         <% end %>
       </div>
 
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
+			</header>
+
+    	<div class="clear"></div>
+
 
     			<%= yield %>
 
