@@ -363,6 +363,10 @@ td  {
 	font-size: 12px;
 }
 
+td a:hover {
+	background-color: yellow;
+}
+
 .group_name {
 	color:blue;
 	text-decoration: underline;
@@ -376,9 +380,7 @@ td  {
 	color:green;
 }
 
-td a:hover {
-	background-color: yellow;
-}
+
 
 /*----------------------------------------------------------------------------- 
 =04 CALENDAR WIZAR
@@ -444,10 +446,11 @@ label {
 	font-family: Arial;
 }
 
+
 input, textarea {
-	width:439px;
+	width:250px;
 	height:27px;
-	background:white;
+	background: rgb(250, 255, 189);
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -456,6 +459,12 @@ input, textarea {
 	margin-top:3px;
 	font-size:0.9em;
 	color:#3a3a3a;
+}
+
+.button_size {
+	width:120px;
+	height: 40px;
+	margin-left: 40px;
 }
 
 .cal_select_bar  {
