@@ -341,9 +341,9 @@ nav ul li a {
     padding-left: 0px;
 }
 
-table, th, td   {
+/*table, th, td   {
 	border: 1px solid black;
-}
+}*/
 table {
 	width:100%;
 	margin-top: 0px;
