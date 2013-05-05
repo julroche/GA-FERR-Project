@@ -204,6 +204,12 @@ header {
 =03 NAVIGATION 
 -----------------------------------------------------------------------------*/
 
+#user_nav {
+	text-align: right;
+	font-size: 15px;
+	padding-right: 5px;
+}
+
 nav ul {
 	margin: 0;
 	padding-top: 20px;
