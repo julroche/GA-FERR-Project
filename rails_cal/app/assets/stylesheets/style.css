@@ -23,6 +23,15 @@ Version: 1.0
 -----------------------------------------------------------------------------*/
 /* In General we set up all our default styles for the site: body, h1-h6, p, a, etc. */
 
+.alert {
+	font-size: 32px;
+	color: red;
+	margin: 20px;
+	padding: 20px;
+	border: 5px solid black;
+
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;

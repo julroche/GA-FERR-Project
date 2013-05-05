@@ -47,14 +47,20 @@
         <% end %>
       </div>
 
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+   
 
 			</header>
 
     	<div class="clear"></div>
 
+     <% if flash.present? %>
+      <div class= "alert">
+        <% flash.each do |name, msg| %>
+         <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+        <% end %>
+      </div>
+      <% end %>
 
     			<%= yield %>
 
