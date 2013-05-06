@@ -6,10 +6,26 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @activity.user_id %>
+  <b>Calendar Owner:</b>
+  <%= @activity.user.name %>
 </p>
 
+
+<table>
+  <tr>
+    <th>Event Name</th> 
+    <th>Start at</th>
+    <th>End at</th>
+  </tr>
+
+<% @activity.events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.start_at %></td>
+    <td><%= event.end_at %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>

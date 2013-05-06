@@ -13,7 +13,7 @@
 <% @activities.each do |activity| %>
   <tr>
     <td><%= activity.activity_name %></td>
-    <td><%= activity.user_id %></td>
+    <td><%= activity.user.name %></td>
     <td><%= activity.updated_at %></td>
     <td><%= link_to 'Show', activity %></td>
     <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
@@ -24,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New Activity', new_activity_path, class: "create-new" %>
+<%= link_to 'Add New Activity Calendar', new_activity_path, class: "create-new" %>
