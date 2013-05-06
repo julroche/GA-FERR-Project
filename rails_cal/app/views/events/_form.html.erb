@@ -12,6 +12,18 @@
   <% end %>
 
   <div class="field">
+   <!--  <%= f.label :activity_id %><br />
+    <%= f.text_field :activity_id %> -->
+ 
+
+    <%= f.label :activity_id %><br />
+    <%= f.select :activity_id,   
+      options_from_collection_for_select(Activity.order("activity_name"),"id","activity_name"), 
+        :include_blank => true %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
