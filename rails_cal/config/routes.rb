@@ -1,5 +1,8 @@
 CalTest2::Application.routes.draw do
 
+  resources :activities
+
+
   get "users/new"
 
   get "users/create"
