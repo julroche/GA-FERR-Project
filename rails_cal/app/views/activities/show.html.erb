@@ -22,7 +22,8 @@
   <tr>
     <td><%= event.name %></td>
     <td><%= event.start_at %></td>
-    <td><%= event.end_at %></td>
+   
+    <td><%= display_event_end_time(event)%></td>
   </tr>
 <% end %>
 </table>

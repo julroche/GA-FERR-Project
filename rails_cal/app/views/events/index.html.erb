@@ -13,7 +13,8 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.activity.activity_name %></td>
+  <td><%= Activity.find(event.activity_id).activity_name%></td>
+   
     <td><%= event.name %></td>
     <td><%= event.start_at %></td>
     <td><%= display_event_end_time(event)%></td>
