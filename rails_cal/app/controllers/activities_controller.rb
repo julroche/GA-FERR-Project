@@ -31,8 +31,9 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @activity }
+      # format.json { render json: @activity }
     end
+
   end
 
   # GET /activities/1/edit
@@ -47,8 +48,8 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
-        format.json { render json: @activity, status: :created, location: @activity }
+        format.html { redirect_to new_event_path, notice: 'Activity was successfully created. Now enter your events.' }
+        format.json { render json: new_event_path, status: :created, location: @activity }
       else
         format.html { render action: "new" }
         format.json { render json: @activity.errors, status: :unprocessable_entity }
