@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+
+  attr_accessor :current_activity
   # GET /activities
   # GET /activities.json
   def index
@@ -14,6 +16,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1.json
   def show
     @activity = Activity.find(params[:id])
+    @current_activity = @activity
 
     respond_to do |format|
       format.html # show.html.erb
