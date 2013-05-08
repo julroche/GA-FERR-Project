@@ -12,18 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :activity_name %><br />
+    <%= f.label :activity_name, 'Activity or Group Name:' %><br />
     <%= f.text_field :activity_name %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
+    <%= f.label :user_id, 'Calendar Owner:' %><br />
     <%= f.select :user_id,   
       options_from_collection_for_select(User.order("name"),"id","name"), 
         :include_blank => true %>
     <br />
   <!--   <%= f.number_field :user_id %> -->
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="action">
+  <!--   <%= f.submit %> -->
+  <%= f.submit 'Next', :class => "signupbutton1" %>
+  
   </div>
 <% end %>

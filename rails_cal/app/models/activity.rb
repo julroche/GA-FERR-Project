@@ -3,4 +3,8 @@ class Activity < ActiveRecord::Base
 
   belongs_to :user
   has_many :events
+
+  validates_presence_of :activity_name
+  validates_presence_of :user_id
+  validates_uniqueness_of :activity_name
 end
