@@ -13,3 +13,7 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+#  chang default date format
+Date::DATE_FORMATS[:default]="%m/%d/%Y"
+Time::DATE_FORMATS[:default]="%m/%d/%Y %H:%M"

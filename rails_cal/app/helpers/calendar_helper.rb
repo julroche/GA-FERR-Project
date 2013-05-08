@@ -21,4 +21,10 @@ module CalendarHelper
       %(<a href="/events/#{event.id}" title="#{h(event.name)}">#{h(event.name)}</a>)
     end
   end
+
+  def display_event_end_time(event)
+  time = event.end_at
+    t = I18n.localize(time, :format => "%l:%M%p")
+    %(#{t})
+  end
 end
