@@ -16,7 +16,7 @@
     <td><%= activity.activity_name %></td>
     <td><%= activity.user.name %></td>
     <td><%= activity.updated_at %></td>
-    <td><%= link_to 'Show', calendar_path(6) %></td>
+    <td><%= link_to 'Show', calendar_path(activity.id) %></td>
    
     <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
     <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>

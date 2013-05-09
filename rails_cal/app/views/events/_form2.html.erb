@@ -1,0 +1,41 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.label :activity_id %><br />
+    <%= f.select :activity_id,   
+      options_from_collection_for_select(Activity.order("activity_name"),"id","activity_name"), 
+        :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+   <div class="field">
+    <%= f.label :start_at %><br />
+    <%= f.datetime_select :start_at,
+    :minute_step => 5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_at %><br />
+    <%= f.text_field :end_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "SAVE EVENT FORM2" %>
+  </div>
+<% end %>
