@@ -13,8 +13,6 @@
 
   <div class="field">
   
- 
-
     <%= f.label :activity_id %><br />
     <%= f.select :activity_id,   
       options_from_collection_for_select(Activity.order("activity_name"),"id","activity_name"), 

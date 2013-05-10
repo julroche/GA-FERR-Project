@@ -32,6 +32,13 @@ class EventsController < ApplicationController
     end
   end
 
+
+  def many_new
+
+
+
+  end
+
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
