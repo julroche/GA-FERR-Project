@@ -35,8 +35,6 @@ class EventsController < ApplicationController
 
   def many_new
 
-
-
   end
 
   # GET /events/1/edit
@@ -52,7 +50,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         # format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.html { redirect_to activity_path(@event.activity), notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }

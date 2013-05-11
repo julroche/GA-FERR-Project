@@ -468,6 +468,16 @@ td a:hover {
 
 }
    
+.form_label {
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+#save_dates {
+	background-color: lime;
+	float:right;
+}
+
 label {
 	display:block;
 	margin-top:20px;
@@ -486,8 +496,9 @@ input, textarea {
 	-webkit-border-radius:5px;
 	border:1px solid #dedede;
 	padding:10px;
+	vertical-align: middle;
 	margin-top:3px;
-	font-size:0.9em;
+	font-size:1.2em;
 	color:#3a3a3a;
 }
 

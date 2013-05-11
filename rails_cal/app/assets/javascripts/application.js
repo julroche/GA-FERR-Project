@@ -16,6 +16,32 @@
 //= require_tree .
 
 
-$(function() {
-  $("#event_end_at").multiDatesPicker();
+$(document).ready(function() {
+  $("#end_at").multiDatesPicker();
+
+	var saveDates = function () {
+		var dates = $("#end_at").multiDatesPicker('getDates');
+		console.log(dates);
+	};
+
+	$('#save_dates').click(function() {
+		saveDates()
+	});
+
 });
+
+
+// var dates = $("#end_at").multiDatesPicker('getDates');
+
+// 		$('#colors').append('<div class="color" style="background-color:' + colorString + '"/div>');
+// 		console.log($('div.color').length);
+
+// 	$('#add').click(function() {
+// 		var colorVal= $('#colors_string').val();
+// 		console.log(colorVal);
+// 		$('#colors_string').css('background-color',colorVal);
+// 		makeSq(colorVal);
+// 	});
+
+
+

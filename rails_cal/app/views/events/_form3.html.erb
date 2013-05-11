@@ -1,0 +1,10 @@
+<%= form_tag(:method => "get") do %>
+  <%= label_tag(:end_at, "Select event dates:") %>
+  <%= text_field_tag(:end_at) %>
+
+  <%= label_tag(:save_dates, "Click here to save dates")%><br /> 
+  <%= text_field_tag(:save_dates) %>
+
+  <%= submit_tag("Next") %>
+<% end %>
+
