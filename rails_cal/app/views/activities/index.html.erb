@@ -2,7 +2,8 @@
 
 <table>
   <tr>
-    <th>Activity name</th>
+    <th>Activity</th>
+    <th>Name</th>
     <th>Calendar Owner</th>
     <th>Last Updated</th>
     <th></th>
@@ -13,6 +14,7 @@
 <% @activities.each do |activity| %>
   
   <tr>
+    <td><%= image_tag activity.activity_icon.url%></td>
     <td><%= activity.activity_name %></td>
     <td><%= activity.user.name %></td>
     <td><%= activity.updated_at %></td>

@@ -11,13 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506031224) do
+ActiveRecord::Schema.define(:version => 20130511160101) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_name"
     t.integer  "user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "activity_icon_file_name"
+    t.string   "activity_icon_content_type"
+    t.integer  "activity_icon_file_size"
+    t.datetime "activity_icon_updated_at"
   end
 
   create_table "events", :force => true do |t|

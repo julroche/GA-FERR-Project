@@ -34,7 +34,11 @@ class EventsController < ApplicationController
 
 
   def many_new
-
+    begin
+      @current_activity = Activity.find(params[:activity_id]).activity_name
+    rescue
+      @current_activity = "Activity was not saved."
+    end
   end
 
   # GET /events/1/edit

@@ -48,7 +48,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to many_new_path, notice: 'Activity was successfully created. Now enter your events.' }
+        format.html { redirect_to many_new_path({:activity_id => @activity.id}), notice: 'Activity was successfully created. Now enter your events.' }
         format.json { render json: many_new_path, status: :created, location: @activity }
       else
         format.html { render action: "new" }
