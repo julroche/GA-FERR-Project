@@ -475,7 +475,7 @@ td a:hover {
 
 #save_dates {
 	background-color: lime;
-	float:right;
+	margin-left: 50px;
 }
 
 label {

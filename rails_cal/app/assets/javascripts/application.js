@@ -17,10 +17,10 @@
 
 
 $(document).ready(function() {
-  $("#end_at").multiDatesPicker();
+  $("#many_dates").multiDatesPicker();
 
 	var saveDates = function () {
-		var dates = $("#end_at").multiDatesPicker('getDates');
+		var dates = $("#many_dates").multiDatesPicker('getDates');
 		console.log(dates);
 	};
 
