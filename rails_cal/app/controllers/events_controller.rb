@@ -66,8 +66,9 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
 
-    # @current_activity = Activity.find(params[:activity_id]).activity_name
-
+    Event.create([{ :name => 'Test Game2', :start_at => "2013-05-14 06:30:00", :end_at => "2013-05-14 07:30:00", :activity_id => "2" }, { :name => 'Test Game3', :start_at => "2013-05-14 06:30:00", :end_at => "2013-05-14 07:30:00", :activity_id => "2" }])
+    
+    flash.now.alert = "Created x new events."
     # @events = params[:all_event_hashes]
     # @events.each do |event_hash|
     #   Event.create(event_hash)

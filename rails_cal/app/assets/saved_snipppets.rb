@@ -59,4 +59,37 @@ def create
     # end
   end
 
+# params into create event
+
+# {"activity_id"=>"81",
+#  "activity_name"=>"T11", 
+#  "name"=>"T11 Event", 
+#  "many_dates"=>"05/15/2013",
+#   "many_start_times(1i)"=>"2013", 
+#   "many_start_times(2i)"=>"5", 
+#   "many_start_times(3i)"=>"12", 
+#   "many_start_times(4i)"=>"14", 
+#   "many_start_times(5i)"=>"00",
+#    "many_end_times(1i)"=>"2013",
+#     "many_end_times(2i)"=>"5", 
+#     "many_end_times(3i)"=>"12",
+#      "many_end_times(4i)"=>"14",
+#       "many_end_times(5i)"=>"00"}
+
+# attributes needed to create event 
+
+# <Event id: 6, 
+# name: "Game vs Hutch Gold", 
+# start_at: "2013-05-14 06:30:00", 
+# end_at: "2013-05-14 07:30:00", 
+# activity_id: "2"> 
+
+# created_at: "2013-05-08 04:00:27", 
+# updated_at: "2013-05-08 04:00:27", 
+
+
+
+
+  
+
   
