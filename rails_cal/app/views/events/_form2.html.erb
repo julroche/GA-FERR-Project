@@ -11,10 +11,11 @@
     </div>
   <% end %>
 
+<%= f.hidden_field :activity_id, {:value => @current_activity_id} %>
+
   <div class="field">
-    <%= f.label :name, "Activity Name:" %><br />
-    <%= @current_activity %>
-  </div>
+    <%= f.label :activity_name, "Activity Name:" %><br />
+    <%= f.text_field :activity_name, {:value => @current_activity} %>
 
   <div class="field">
     <%= f.label :name, "Event Name:" %><br />

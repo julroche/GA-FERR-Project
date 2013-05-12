@@ -24,7 +24,15 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
+     @event = Event.new
+     
+     begin
+      @current_activity = Activity.find(params[:activity_id]).activity_name
+    rescue
+      @current_activity = "Activity was not saved."
+    end
+
+    @current_activity_id = params[:activity_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,11 +43,13 @@ class EventsController < ApplicationController
 
   def many_new
     @event = Event.new(params[:event])
+
     begin
       @current_activity = Activity.find(params[:activity_id]).activity_name
     rescue
       @current_activity = "Activity was not saved."
     end
+
 
     # @activity = 100
     # e_to_be_deleted = Events.find_all_by_activity_id(@activity.id)
@@ -56,6 +66,8 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
 
+    # @current_activity = Activity.find(params[:activity_id]).activity_name
+
     # @events = params[:all_event_hashes]
     # @events.each do |event_hash|
     #   Event.create(event_hash)
@@ -63,18 +75,18 @@ class EventsController < ApplicationController
 
     # redirect_to lala_path, :notice => "Created #{@events.count} new events."
 
-    @event = Event.new(params[:event])
+    # @event = Event.new(params[:event])
 
-    respond_to do |format|
-      if @event.save
-        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @event.save
+    #     # format.html { redirect_to @event, notice: 'Event was successfully created.' }
+    #     format.html { redirect_to @event, notice: 'Event was successfully created.' }
+    #     format.json { render json: @event, status: :created, location: @event }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @event.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PUT /events/1
