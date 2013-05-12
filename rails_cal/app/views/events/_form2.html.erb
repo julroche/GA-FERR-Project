@@ -12,30 +12,42 @@
   <% end %>
 
   <div class="field">
-
-    <%= f.label :activity_id %><br />
-    <%= f.select :activity_id,  
-      options_from_collection_for_select(Activity.order("activity_name"),"id","activity_name"), 
-        :include_blank => true %>
+    <%= f.label :name, "Activity Name:" %><br />
+    <%= @current_activity %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Event Name:" %><br />
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.label :many_dates, "Event Dates:" %><br />
+    <%= f.text_field :many_dates %>
+  </div>
+
    <div class="field">
-    <%= f.label :start_at %><br />
-    <%= f.datetime_select :start_at,
+    <%= f.label :many_start_times, "Default Start Time:" %><br />
+    <%= f.time_select :many_start_times,
     :minute_step => 5 %>
   </div>
 
-  <div class="field">
-    <%= f.label :end_at %><br />
-    <%= f.text_field :end_at %>
+
+   <div class="field">
+    <%= f.label :many_end_times, "Default End Time:" %><br />
+    <%= f.time_select :many_end_times,
+    :minute_step => 5 %>
   </div>
 
+  <%= text_field_tag(:save_dates, "Click here to save dates- form2") %>
+
+
   <div class="actions">
-    <%= f.submit "SAVE EVENT FORM2" %>
+    <%= f.submit "NEXT" %>
   </div>
 <% end %>
+
+
+<%= params %>
+<br/>
+

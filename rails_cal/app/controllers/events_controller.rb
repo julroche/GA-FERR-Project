@@ -34,11 +34,17 @@ class EventsController < ApplicationController
 
 
   def many_new
+    @event = Event.new(params[:event])
     begin
       @current_activity = Activity.find(params[:activity_id]).activity_name
     rescue
       @current_activity = "Activity was not saved."
     end
+
+    # @activity = 100
+    # e_to_be_deleted = Events.find_all_by_activity_id(@activity.id)
+    # e_to_be_deleted.destroy_all!
+  
   end
 
   # GET /events/1/edit
@@ -49,6 +55,14 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+
+    # @events = params[:all_event_hashes]
+    # @events.each do |event_hash|
+    #   Event.create(event_hash)
+    # end
+
+    # redirect_to lala_path, :notice => "Created #{@events.count} new events."
+
     @event = Event.new(params[:event])
 
     respond_to do |format|
