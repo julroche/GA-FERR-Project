@@ -15,6 +15,8 @@
   <%= @event.end_at %>
 </p>
 
+<% if current_user.id == @event.activity.user.id %>
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+ <% end %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
