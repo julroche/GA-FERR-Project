@@ -6,3 +6,5 @@
 
 
 <%= raw(event_calendar) %>
+
+<%= link_to 'Add a New Event', new_event_path({:activity_id => @activity.id}), class: "create-new" %>

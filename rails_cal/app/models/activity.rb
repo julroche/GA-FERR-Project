@@ -2,7 +2,7 @@ class Activity < ActiveRecord::Base
   attr_accessible :activity_name, :user_id, :activity_icon
 
   belongs_to :user
-  has_many :events
+  has_many :events, :dependent => :destroy
 
  	has_attached_file :activity_icon
 
