@@ -12,12 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
-//=require jquery-ui
+//= require jquery-ui
 //= require_tree .
 
 
 $(document).ready(function() {
   $("#event_many_dates").multiDatesPicker();
+
+	$('#save_dates').click(function() {
+		saveDates()
+	});
+
+	// $('a.step1trig').click(function() {
+	// 	$('.step1').addClass('current_step');
+	// });
+
+	// $('.nextbutton1').click(function() {
+	// 	$('.step2').addClass('current_step');
+	// });
+
+	// $('a.step3trig').click(function() {
+	// 	$('.step3').addClass('current_step');
+	// });
 
 	var saveDates = function () {
 		var dates = $("#event_many_dates").multiDatesPicker('getDates');
@@ -28,7 +44,9 @@ $(document).ready(function() {
 		saveDates()
 	});
 
+
 });
+
 
 
 // var dates = $("#end_at").multiDatesPicker('getDates');

@@ -442,15 +442,19 @@ td a:hover {
 }
 
 
-.step {
+.step1, .step2, .step3 {
 	width:180px;
-	height:80px;
+	height:70px;
 	background-color: white;
 	text-align: center;
 	margin-left: 20px;
 	margin-right: 20px;
 	padding: 10px;
 	float:left;
+}
+
+a.step1trig {
+	
 }
 
 .current_step{
@@ -618,7 +622,7 @@ footer {
 	clear:both;	
 }
 
-.signupbutton1 {
+.signupbutton1, .nextbutton1 {
 	-moz-optionshadow:inset 0px 1px 0px 0px #fce2c1;
 	-webkit-optionshadow:inset 0px 1px 0px 0px #fce2c1;
 	optionshadow:inset 0px 1px 0px 0px #fce2c1;
