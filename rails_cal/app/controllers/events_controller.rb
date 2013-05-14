@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+  include EventsHelper  
   # GET /events
   # GET /events.json
   def index
@@ -50,11 +52,6 @@ class EventsController < ApplicationController
       @current_activity = "Activity was not saved."
     end
 
-
-    # @activity = 100
-    # e_to_be_deleted = Events.find_all_by_activity_id(@activity.id)
-    # e_to_be_deleted.destroy_all!
-  
   end
 
   # GET /events/1/edit
@@ -66,13 +63,33 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
 
-    Event.create([{ :name => 'Weekly Meeting', :start_at => "2013-05-15 06:30:00", :end_at => "2013-05-15 07:30:00", :activity_id => "82" }, { :name => 'Weekly Meeting', :start_at => "2013-05-22 6:30:00", :end_at => "2013-05-22 7:30:00", :activity_id => "82" }])
+    @many_dates = params[:event][:many_dates].split(',')
+    @start_hour = params[:event][:"many_start_times(4i)"]
+    @start_min = params[:event][:"many_start_times(5i)"]
+    @end_hour = params[:event][:"many_end_times(4i)"]
+    @end_min = params[:event][:"many_end_times(5i)"]
+
+    require 'date'
+
+    #create start_at and end_at arrays
+    # @start_at_array = make_event_times_array(@many_dates,@start_hour,@start_min)
+
+    @event_time1 = create_event_time("02/15/2013", "04", "30")
+
+    @test_array = make_event_times_array(["05/14/2013", "06/16/2013"],"04", "30")
+
+
+    @start_at_array = make_event_times_array(@many_dates,@start_hour, @start_min)
+
+    @end_at_array = make_event_times_array(@many_dates,@end_hour, @end_min)
+
+#create event array using arrays just created along with other passed in params  
+  @events_array = create_event_array(@start_at_array, @end_at_array, params[:event][:name], params[:event][:activity_id])    
+
+# Call create method on array of event hashes and create activerecord for each
+  Event.create([@events_array])
     
-    flash.now.alert = "Created x new events."
-    # @events = params[:all_event_hashes]
-    # @events.each do |event_hash|
-    #   Event.create(event_hash)
-    # end
+    flash.now.alert = "Created #{@events_array.count} new events."
 
     # redirect_to lala_path, :notice => "Created #{@events.count} new events."
 
