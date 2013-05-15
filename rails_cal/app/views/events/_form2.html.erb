@@ -45,9 +45,17 @@
   </div>
 <% end %>
 
+<script>
+  $(document).ready(function() {
+    $('.step1').addClass('current_step');
+  });
 
-<%= params %>
-<br/>
+  $(document).unload(function() {
+    $('.step1').removeClass('current_step');
+  });
+
+  console.log("HEY YOU!")
+</script>
 
 
 

@@ -13,12 +13,12 @@
 
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-	$('.step2').addClass('current_step');
+// 	$('.step2').addClass('current_step');
 
 
-});
+// });
 
 
 

@@ -13,15 +13,15 @@
 
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-	$('.step1').addClass('current_step');
+// 	$('.step1').addClass('current_step');
 
-});
+// });
 
-$(document).unload(function() {
+// $(document).unload(function() {
 
-  $('.step1').removeClass('current_step');
+//   $('.step1').removeClass('current_step');
 
-});
+// });
 
