@@ -91,9 +91,7 @@ class EventsController < ApplicationController
     
     flash.now.alert = "Created #{@events_array.count} new events."
 
-    # redirect_to lala_path, :notice => "Created #{@events.count} new events."
-
-    # @event = Event.new(params[:event])
+    redirect_to calendar_path(params[:event][:activity_id]), :notice => "Created #{@events_array.count} new events. Click on events to edit."
 
     # respond_to do |format|
     #   if @event.save

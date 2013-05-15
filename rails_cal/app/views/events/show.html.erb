@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Activity Name:</b>
+  <%= @event.activity.activity_name %>
+</p>
+
+<p>
+  <b>Event Name:</b>
   <%= @event.name %>
 </p>
 
@@ -19,4 +24,4 @@
 	<%= link_to 'Edit', edit_event_path(@event) %> |
  <% end %>
 
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back to Calendar', calendar_path(@event.activity.id) %>
