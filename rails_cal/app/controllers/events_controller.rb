@@ -57,6 +57,12 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+
+    @current_activity = @event.activity.activity_name
+
+    @current_activity_id = @event.activity.id
+
+
   end
 
   # POST /events
@@ -128,7 +134,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to activity_path(@event.activity.id)}
       format.json { head :no_content }
     end
   end

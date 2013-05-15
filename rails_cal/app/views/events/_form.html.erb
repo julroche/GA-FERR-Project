@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+
+<%= f.hidden_field :activity_id, {:value => @current_activity_id} %>
+
+   <div class="field">
   
-    <%= f.label :activity_id %><br />
-    <%= f.select :activity_id,   
-      options_from_collection_for_select(Activity.order("activity_name"),"id","activity_name"), 
-        :include_blank => true %>
-  </div>
-
-
+    <%= label_tag :activity_name %>
+    <%= text_field_tag 'activity_name', "#{@current_activity}", :disabled => true %>
+   
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
